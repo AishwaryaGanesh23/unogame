@@ -1,0 +1,325 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/*div {
+  border: 1px dotted black;
+}*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #f83c42;
+  text-align: center;
+  padding: 0;
+  height: 10vh;
+  user-select: none;
+  border: 1px solid #f83c42;
+}
+
+.header p {
+  margin-top: 2px;
+  font-size: 70px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: #fbd702;
+  text-shadow: 3px 0 0 #000000, -3px 0 0 #000000, 0 3px 0 #000000,
+    0 -3px 0 #000000, 2px 2px #000000, -2px -2px 0 #000000, 2px -2px 0 #000000,
+    -2px 2px 0 #000000;
+}
+
+.content {
+  height: 85%;
+  display: flex;
+  flex-direction: row;
+}
+
+.column-1 {
+  width: 85vw;
+  height: 100%;
+  margin: 2px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+}
+
+.player {
+  min-height: 280px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.one,
+.two {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  min-width: 75%;
+  max-width: 85%;
+  align-items: flex-start;
+  margin-right: 2%;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  margin: 20px 1% 20px 0;
+  height: 175px;
+  min-width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border: 10px solid black;
+  border-radius: 20px;
+  user-select: none;
+  color: white;
+  text-shadow: 3px 0 0 #000000, -3px 0 0 #000000, 0 3px 0 #000000,
+    0 -3px 0 #000000, 2px 2px #000000, -2px -2px 0 #000000, 2px -2px 0 #000000,
+    -2px 2px 0 #000000;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+  font-size: 28px;
+  text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000,
+    0 -1px 0 #000000, 0.5px 0.5px #000000, -0.5px -0.5px 0 #000000,
+    0.5px -0.5px 0 #000000, -0.5px 0.5px 0 #000000;
+}
+
+.card::before {
+  top: 10px;
+  left: 15px;
+}
+
+.card::after {
+  bottom: 10px;
+  right: 15px;
+  transform: rotate(180deg);
+}
+
+.wild {
+  font-size: 65px;
+}
+
+.wild,
+.draw4 {
+  background: linear-gradient(
+    to bottom,
+    red 25%,
+    blue 25%,
+    blue 50%,
+    green 50%,
+    green 75%,
+    #ffe600 75%
+  );
+}
+
+.blocked {
+  color: #000000 !important;
+  background-color: #000000 !important;
+  background: #000000;
+  cursor: auto !important;
+}
+
+.button_div {
+  margin-left: 25px;
+  min-width: 15%;
+  max-width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.uno_button,
+.callOut_button {
+  cursor: pointer;
+  margin-top: 15px;
+  height: 125px;
+  min-width: 125px;
+  max-width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 8px solid black;
+  border-radius: 50%;
+  user-select: none;
+  color: white;
+  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000,
+    0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000;
+}
+.uno_button {
+  font-size: 35px;
+  background-color: #f83c42;
+}
+.callOut_button {
+  padding-top: 5px;
+  font-size: 20px;
+  background-color: #f7ae0f;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 260px;
+  width: 90%;
+}
+
+.turn_div {
+  min-width: 20%;
+  max-width: 30%;
+  user-select: none;
+}
+
+.playerturn {
+  margin: 50px;
+  font-size: 40px;
+  padding: 10px;
+}
+
+.deck_div {
+  min-width: 20%;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.deck {
+  cursor: pointer;
+  margin: 20px;
+  height: 175px;
+  max-width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid black;
+  border-radius: 20px;
+  user-select: none;
+  font-size: 30px;
+  background-color: #f83c42;
+  color: white;
+  padding-left: 15px;
+  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000,
+    0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000;
+}
+
+.topcard_div {
+  min-width: 20%;
+  max-width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.wild {
+  font-size: 40px;
+}
+
+.column-2 {
+  width: 20vw;
+  height: 100%;
+  clear: left;
+}
+/* .scoretitle, */
+/* .rulestitle, */
+.helptitle {
+  font-size: 40px;
+}
+
+.helpcontent {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+.helpcontent p {
+  text-align: left;
+  font-size: 20px;
+}
+/* .score_div {
+  clear: left;
+  display: flex;
+  flex-direction: column;
+}
+.scoretitle {
+  margin: 20px 0 0 20px;
+}
+.scorecontent {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+.score p {
+  padding: 10px;
+  font-size: 20px;
+} */
+
+/* .rules,
+.help {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.rulestitle {
+  padding: 0 0 20px 0;
+}
+.rulescontent a {
+  text-decoration: none;
+} */
+
+/* .footer {
+  background-color: #eb2026;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2vh;
+  font-family: sans-serif;
+}
+.footer p {
+  color: white;
+  font-size: 10px;
+  margin: auto;
+} */
+
+@media only screen and (max-width: 1600px) {
+  .content {
+    flex-direction: column;
+  }
+  .column-1 {
+    width: 95vw;
+  }
+  .column-2 {
+    width: 100%;
+  }
+  .button_div {
+    margin-left: 50px;
+    flex-direction: column;
+  }
+
+  .helpcontent {
+    flex-direction: row;
+  }
+}
